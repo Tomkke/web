@@ -1,0 +1,717 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\web.bundle.scp.css",
+      "PackagePath": "staticwebassets\\web.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\ChickenCross\\media\\boulder.png",
+      "PackagePath": "staticwebassets\\igre\\ChickenCross\\media\\boulder.png"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\ChickenCross\\media\\buff.mp3",
+      "PackagePath": "staticwebassets\\igre\\ChickenCross\\media\\buff.mp3"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\ChickenCross\\media\\cashOut.mp3",
+      "PackagePath": "staticwebassets\\igre\\ChickenCross\\media\\cashOut.mp3"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\ChickenCross\\media\\chicken.mp3",
+      "PackagePath": "staticwebassets\\igre\\ChickenCross\\media\\chicken.mp3"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\ChickenCross\\media\\chicken.png",
+      "PackagePath": "staticwebassets\\igre\\ChickenCross\\media\\chicken.png"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\ChickenCross\\media\\crash.mp3",
+      "PackagePath": "staticwebassets\\igre\\ChickenCross\\media\\crash.mp3"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\ChickenCross\\media\\grassy-road.png",
+      "PackagePath": "staticwebassets\\igre\\ChickenCross\\media\\grassy-road.png"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\ChickenCross\\media\\jackpot.mp3",
+      "PackagePath": "staticwebassets\\igre\\ChickenCross\\media\\jackpot.mp3"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\ChickenCross\\script.js",
+      "PackagePath": "staticwebassets\\igre\\ChickenCross\\script.js"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\ChickenCross\\style.css",
+      "PackagePath": "staticwebassets\\igre\\ChickenCross\\style.css"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\Doors\\media\\bomb.mp3",
+      "PackagePath": "staticwebassets\\igre\\Doors\\media\\bomb.mp3"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\Doors\\media\\buff.mp3",
+      "PackagePath": "staticwebassets\\igre\\Doors\\media\\buff.mp3"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\Doors\\media\\closed-door.png",
+      "PackagePath": "staticwebassets\\igre\\Doors\\media\\closed-door.png"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\Doors\\media\\damage.mp3",
+      "PackagePath": "staticwebassets\\igre\\Doors\\media\\damage.mp3"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\Doors\\media\\emergency-door.png",
+      "PackagePath": "staticwebassets\\igre\\Doors\\media\\emergency-door.png"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\Doors\\media\\jackpot.mp3",
+      "PackagePath": "staticwebassets\\igre\\Doors\\media\\jackpot.mp3"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\Doors\\media\\open-door.png",
+      "PackagePath": "staticwebassets\\igre\\Doors\\media\\open-door.png"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\Doors\\media\\wall.png",
+      "PackagePath": "staticwebassets\\igre\\Doors\\media\\wall.png"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\Doors\\script.js",
+      "PackagePath": "staticwebassets\\igre\\Doors\\script.js"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\Doors\\style.css",
+      "PackagePath": "staticwebassets\\igre\\Doors\\style.css"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\HigherLower\\media\\arrows\\green_down.svg",
+      "PackagePath": "staticwebassets\\igre\\HigherLower\\media\\arrows\\green_down.svg"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\HigherLower\\media\\arrows\\green_up.svg",
+      "PackagePath": "staticwebassets\\igre\\HigherLower\\media\\arrows\\green_up.svg"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\HigherLower\\media\\arrows\\red_down.svg",
+      "PackagePath": "staticwebassets\\igre\\HigherLower\\media\\arrows\\red_down.svg"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\HigherLower\\media\\arrows\\red_up.svg",
+      "PackagePath": "staticwebassets\\igre\\HigherLower\\media\\arrows\\red_up.svg"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\HigherLower\\media\\click.wav",
+      "PackagePath": "staticwebassets\\igre\\HigherLower\\media\\click.wav"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\HigherLower\\media\\correct-choice.mp3",
+      "PackagePath": "staticwebassets\\igre\\HigherLower\\media\\correct-choice.mp3"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\HigherLower\\media\\fail.wav",
+      "PackagePath": "staticwebassets\\igre\\HigherLower\\media\\fail.wav"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\HigherLower\\media\\poker_cards\\2C.svg",
+      "PackagePath": "staticwebassets\\igre\\HigherLower\\media\\poker_cards\\2C.svg"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\HigherLower\\media\\poker_cards\\2D.svg",
+      "PackagePath": "staticwebassets\\igre\\HigherLower\\media\\poker_cards\\2D.svg"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\HigherLower\\media\\poker_cards\\2H.svg",
+      "PackagePath": "staticwebassets\\igre\\HigherLower\\media\\poker_cards\\2H.svg"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\HigherLower\\media\\poker_cards\\2S.svg",
+      "PackagePath": "staticwebassets\\igre\\HigherLower\\media\\poker_cards\\2S.svg"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\HigherLower\\media\\poker_cards\\3C.svg",
+      "PackagePath": "staticwebassets\\igre\\HigherLower\\media\\poker_cards\\3C.svg"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\HigherLower\\media\\poker_cards\\3D.svg",
+      "PackagePath": "staticwebassets\\igre\\HigherLower\\media\\poker_cards\\3D.svg"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\HigherLower\\media\\poker_cards\\3H.svg",
+      "PackagePath": "staticwebassets\\igre\\HigherLower\\media\\poker_cards\\3H.svg"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\HigherLower\\media\\poker_cards\\3S.svg",
+      "PackagePath": "staticwebassets\\igre\\HigherLower\\media\\poker_cards\\3S.svg"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\HigherLower\\media\\poker_cards\\4C.svg",
+      "PackagePath": "staticwebassets\\igre\\HigherLower\\media\\poker_cards\\4C.svg"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\HigherLower\\media\\poker_cards\\4D.svg",
+      "PackagePath": "staticwebassets\\igre\\HigherLower\\media\\poker_cards\\4D.svg"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\HigherLower\\media\\poker_cards\\4H.svg",
+      "PackagePath": "staticwebassets\\igre\\HigherLower\\media\\poker_cards\\4H.svg"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\HigherLower\\media\\poker_cards\\4S.svg",
+      "PackagePath": "staticwebassets\\igre\\HigherLower\\media\\poker_cards\\4S.svg"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\HigherLower\\media\\poker_cards\\5C.svg",
+      "PackagePath": "staticwebassets\\igre\\HigherLower\\media\\poker_cards\\5C.svg"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\HigherLower\\media\\poker_cards\\5D.svg",
+      "PackagePath": "staticwebassets\\igre\\HigherLower\\media\\poker_cards\\5D.svg"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\HigherLower\\media\\poker_cards\\5H.svg",
+      "PackagePath": "staticwebassets\\igre\\HigherLower\\media\\poker_cards\\5H.svg"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\HigherLower\\media\\poker_cards\\5S.svg",
+      "PackagePath": "staticwebassets\\igre\\HigherLower\\media\\poker_cards\\5S.svg"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\HigherLower\\media\\poker_cards\\6C.svg",
+      "PackagePath": "staticwebassets\\igre\\HigherLower\\media\\poker_cards\\6C.svg"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\HigherLower\\media\\poker_cards\\6D.svg",
+      "PackagePath": "staticwebassets\\igre\\HigherLower\\media\\poker_cards\\6D.svg"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\HigherLower\\media\\poker_cards\\6H.svg",
+      "PackagePath": "staticwebassets\\igre\\HigherLower\\media\\poker_cards\\6H.svg"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\HigherLower\\media\\poker_cards\\6S.svg",
+      "PackagePath": "staticwebassets\\igre\\HigherLower\\media\\poker_cards\\6S.svg"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\HigherLower\\media\\poker_cards\\7C.svg",
+      "PackagePath": "staticwebassets\\igre\\HigherLower\\media\\poker_cards\\7C.svg"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\HigherLower\\media\\poker_cards\\7D.svg",
+      "PackagePath": "staticwebassets\\igre\\HigherLower\\media\\poker_cards\\7D.svg"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\HigherLower\\media\\poker_cards\\7H.svg",
+      "PackagePath": "staticwebassets\\igre\\HigherLower\\media\\poker_cards\\7H.svg"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\HigherLower\\media\\poker_cards\\7S.svg",
+      "PackagePath": "staticwebassets\\igre\\HigherLower\\media\\poker_cards\\7S.svg"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\HigherLower\\media\\poker_cards\\8C.svg",
+      "PackagePath": "staticwebassets\\igre\\HigherLower\\media\\poker_cards\\8C.svg"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\HigherLower\\media\\poker_cards\\8D.svg",
+      "PackagePath": "staticwebassets\\igre\\HigherLower\\media\\poker_cards\\8D.svg"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\HigherLower\\media\\poker_cards\\8H.svg",
+      "PackagePath": "staticwebassets\\igre\\HigherLower\\media\\poker_cards\\8H.svg"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\HigherLower\\media\\poker_cards\\8S.svg",
+      "PackagePath": "staticwebassets\\igre\\HigherLower\\media\\poker_cards\\8S.svg"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\HigherLower\\media\\poker_cards\\9C.svg",
+      "PackagePath": "staticwebassets\\igre\\HigherLower\\media\\poker_cards\\9C.svg"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\HigherLower\\media\\poker_cards\\9D.svg",
+      "PackagePath": "staticwebassets\\igre\\HigherLower\\media\\poker_cards\\9D.svg"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\HigherLower\\media\\poker_cards\\9H.svg",
+      "PackagePath": "staticwebassets\\igre\\HigherLower\\media\\poker_cards\\9H.svg"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\HigherLower\\media\\poker_cards\\9S.svg",
+      "PackagePath": "staticwebassets\\igre\\HigherLower\\media\\poker_cards\\9S.svg"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\HigherLower\\media\\poker_cards\\AC.svg",
+      "PackagePath": "staticwebassets\\igre\\HigherLower\\media\\poker_cards\\AC.svg"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\HigherLower\\media\\poker_cards\\AD.svg",
+      "PackagePath": "staticwebassets\\igre\\HigherLower\\media\\poker_cards\\AD.svg"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\HigherLower\\media\\poker_cards\\AH.svg",
+      "PackagePath": "staticwebassets\\igre\\HigherLower\\media\\poker_cards\\AH.svg"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\HigherLower\\media\\poker_cards\\AS.svg",
+      "PackagePath": "staticwebassets\\igre\\HigherLower\\media\\poker_cards\\AS.svg"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\HigherLower\\media\\poker_cards\\JC.svg",
+      "PackagePath": "staticwebassets\\igre\\HigherLower\\media\\poker_cards\\JC.svg"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\HigherLower\\media\\poker_cards\\JD.svg",
+      "PackagePath": "staticwebassets\\igre\\HigherLower\\media\\poker_cards\\JD.svg"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\HigherLower\\media\\poker_cards\\JH.svg",
+      "PackagePath": "staticwebassets\\igre\\HigherLower\\media\\poker_cards\\JH.svg"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\HigherLower\\media\\poker_cards\\JS.svg",
+      "PackagePath": "staticwebassets\\igre\\HigherLower\\media\\poker_cards\\JS.svg"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\HigherLower\\media\\poker_cards\\KC.svg",
+      "PackagePath": "staticwebassets\\igre\\HigherLower\\media\\poker_cards\\KC.svg"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\HigherLower\\media\\poker_cards\\KD.svg",
+      "PackagePath": "staticwebassets\\igre\\HigherLower\\media\\poker_cards\\KD.svg"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\HigherLower\\media\\poker_cards\\KH.svg",
+      "PackagePath": "staticwebassets\\igre\\HigherLower\\media\\poker_cards\\KH.svg"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\HigherLower\\media\\poker_cards\\KS.svg",
+      "PackagePath": "staticwebassets\\igre\\HigherLower\\media\\poker_cards\\KS.svg"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\HigherLower\\media\\poker_cards\\QC.svg",
+      "PackagePath": "staticwebassets\\igre\\HigherLower\\media\\poker_cards\\QC.svg"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\HigherLower\\media\\poker_cards\\QD.svg",
+      "PackagePath": "staticwebassets\\igre\\HigherLower\\media\\poker_cards\\QD.svg"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\HigherLower\\media\\poker_cards\\QH.svg",
+      "PackagePath": "staticwebassets\\igre\\HigherLower\\media\\poker_cards\\QH.svg"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\HigherLower\\media\\poker_cards\\QS.svg",
+      "PackagePath": "staticwebassets\\igre\\HigherLower\\media\\poker_cards\\QS.svg"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\HigherLower\\media\\poker_cards\\TC.svg",
+      "PackagePath": "staticwebassets\\igre\\HigherLower\\media\\poker_cards\\TC.svg"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\HigherLower\\media\\poker_cards\\TD.svg",
+      "PackagePath": "staticwebassets\\igre\\HigherLower\\media\\poker_cards\\TD.svg"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\HigherLower\\media\\poker_cards\\TH.svg",
+      "PackagePath": "staticwebassets\\igre\\HigherLower\\media\\poker_cards\\TH.svg"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\HigherLower\\media\\poker_cards\\TS.svg",
+      "PackagePath": "staticwebassets\\igre\\HigherLower\\media\\poker_cards\\TS.svg"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\HigherLower\\script.js",
+      "PackagePath": "staticwebassets\\igre\\HigherLower\\script.js"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\HigherLower\\style.css",
+      "PackagePath": "staticwebassets\\igre\\HigherLower\\style.css"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\Mines\\media\\cashout.mp3",
+      "PackagePath": "staticwebassets\\igre\\Mines\\media\\cashout.mp3"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\Mines\\media\\emerald.mp3",
+      "PackagePath": "staticwebassets\\igre\\Mines\\media\\emerald.mp3"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\Mines\\media\\mine.mp3",
+      "PackagePath": "staticwebassets\\igre\\Mines\\media\\mine.mp3"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\Mines\\media\\start.mp3",
+      "PackagePath": "staticwebassets\\igre\\Mines\\media\\start.mp3"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\Mines\\style.css",
+      "PackagePath": "staticwebassets\\igre\\Mines\\style.css"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\Plinko\\media\\land.mp3",
+      "PackagePath": "staticwebassets\\igre\\Plinko\\media\\land.mp3"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\Plinko\\script.js",
+      "PackagePath": "staticwebassets\\igre\\Plinko\\script.js"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\Plinko\\style.css",
+      "PackagePath": "staticwebassets\\igre\\Plinko\\style.css"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\Slot\\media\\click.mp3",
+      "PackagePath": "staticwebassets\\igre\\Slot\\media\\click.mp3"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\Slot\\media\\free_roll.wav",
+      "PackagePath": "staticwebassets\\igre\\Slot\\media\\free_roll.wav"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\Slot\\media\\fruit_win.wav",
+      "PackagePath": "staticwebassets\\igre\\Slot\\media\\fruit_win.wav"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\Slot\\media\\jackpot.wav",
+      "PackagePath": "staticwebassets\\igre\\Slot\\media\\jackpot.wav"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\Slot\\media\\slotreel.webp",
+      "PackagePath": "staticwebassets\\igre\\Slot\\media\\slotreel.webp"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\Slot\\script.js",
+      "PackagePath": "staticwebassets\\igre\\Slot\\script.js"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\igre\\Slot\\style.css",
+      "PackagePath": "staticwebassets\\igre\\Slot\\style.css"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\images\\1ChickenCross.png",
+      "PackagePath": "staticwebassets\\images\\1ChickenCross.png"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\images\\1Doors.png",
+      "PackagePath": "staticwebassets\\images\\1Doors.png"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\images\\1HigherLower.png",
+      "PackagePath": "staticwebassets\\images\\1HigherLower.png"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\images\\1Mines.png",
+      "PackagePath": "staticwebassets\\images\\1Mines.png"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\images\\1Plinko.png",
+      "PackagePath": "staticwebassets\\images\\1Plinko.png"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\images\\1Slot.png",
+      "PackagePath": "staticwebassets\\images\\1Slot.png"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\images\\ChickenCross.png",
+      "PackagePath": "staticwebassets\\images\\ChickenCross.png"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\images\\Doors.png",
+      "PackagePath": "staticwebassets\\images\\Doors.png"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\images\\HigherLower.png",
+      "PackagePath": "staticwebassets\\images\\HigherLower.png"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\images\\Mines.png",
+      "PackagePath": "staticwebassets\\images\\Mines.png"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\images\\Plinko.png",
+      "PackagePath": "staticwebassets\\images\\Plinko.png"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\images\\Slot.png",
+      "PackagePath": "staticwebassets\\images\\Slot.png"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\images\\hero-image.png",
+      "PackagePath": "staticwebassets\\images\\hero-image.png"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\images\\hero-image2.png",
+      "PackagePath": "staticwebassets\\images\\hero-image2.png"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\images\\hero.png",
+      "PackagePath": "staticwebassets\\images\\hero.png"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\images\\stars.gif",
+      "PackagePath": "staticwebassets\\images\\stars.gif"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\images\\steakLogo.png",
+      "PackagePath": "staticwebassets\\images\\steakLogo.png"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Tomas\\Desktop\\Casino - Steak\\web\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.web.props",
+      "PackagePath": "build\\web.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.web.props",
+      "PackagePath": "buildMultiTargeting\\web.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.web.props",
+      "PackagePath": "buildTransitive\\web.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.web.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

@@ -1,0 +1,481 @@
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "ChickenCross";
+}
+
+<header>
+
+
+    <div class="userDiv">
+        <i id="user" class="fas fa-user"></i>
+        <p id="username"></p>
+        <p>🥩</p>
+        <p id="usermeat"></p>
+    </div>
+</header>
+
+<i id="info" class="fa-solid fa-circle-info"></i>
+<button id="exit">Exit</button>
+
+<div class="modal" id="infoModal">
+    <div class="modal-content">
+        <span class="close" id="closeModal">&times;</span>
+        <h2>Rules</h2>
+        <p>1. Place your bet (in <strong>Meat 🥩</strong>).</p>
+        <p>2. Move the chicken to increase your multiplier (up to 1.55x per move).</p>
+        <p>3. Each move has a <strong>1/5 chance of death</strong>.</p>
+        <p>4. Survive 10 moves to hit the <strong>jackpot (100.2x)</strong>!</p>
+        <p>5. Cash out anytime to secure your winnings (bet × current multiplier).</p>
+        <p>If the chicken dies, you lose your bet. Good luck! 🐔</p>
+    </div>
+</div>
+
+<div class="game-container">
+    <h1>CHICKEN CROSS</h1>
+    <input type="number" min="1" step="1" id="bet" name="bet">
+    <button type="submit" value="start" id="start" onclick="startGame()">Bet</button>
+
+    <div class="road">
+        <div class="landing-grid" id="landingGrid"></div>
+
+        <img src="/igre/ChickenCross/media/boulder.png" href="Boulder" id="boulder">
+
+        <div class="chicken" id="chicken">
+            <img src="/igre/ChickenCross/media/chicken.png" href="Chicken">
+        </div>
+    </div>
+
+    <div class="controls">
+        <button id="moveButton" onclick="moveChicken()">Move Chicken</button>
+        <button id="cashOutButton" onclick="cashOut()">Cash Out</button>
+    </div>
+
+    <div class="info">
+        <p id="status">Place a bet and move the chicken to start.</p>
+    </div>
+</div>
+
+
+<div id="resultModal" style="display:none;">
+    <div class="modal-content">
+        <h2 id="resultTitle"></h2>
+        <p id="resultMessage"></p>
+        <div class="result-actions">
+            <button id="playAgainButton">Play Again</button>
+            <button id="endGameButton">End Game</button>
+        </div>
+    </div>
+</div>
+
+<audio id="chickenSound" src="/igre/ChickenCross/media/buff.mp3" preload="auto"></audio>
+<audio id="loseSound" src="/igre/ChickenCross/media/crash.mp3" preload="auto"></audio>
+<audio id="jackpotSound" src="/igre/ChickenCross/media/jackpot.mp3" preload="auto"></audio>
+<audio id="cashOutSound" src="/igre/ChickenCross/media/cashOut.mp3" preload="auto"></audio>
+
+
+
+<div id="toast" class="toast hidden">
+    <span id="toastMessage"></span>
+</div>
+
+
+@section Scripts {
+<script>
+
+const MULTIPLIERS = [
+    1.0,
+    1.25,
+    1.55,
+    1.9,
+    2.3,
+    2.8,
+    3.5,
+    4.5,
+    6.0,
+    10.0,
+    100.2
+];
+
+
+
+
+function showToast(message, type = "success") {
+    const toast = document.getElementById("toast");
+    const toastMessage = document.getElementById("toastMessage");
+
+    toastMessage.textContent = message;
+    toast.className = `toast show ${type}`;
+
+    setTimeout(() => {
+        toast.classList.remove("show");
+        toast.classList.add("hidden");
+    }, 3000);
+}
+
+
+
+
+let totalWin = 0;
+let totalLoss = 0;
+let profit = 0;
+let balance = parseFloat("@ViewBag.Balance".replace(',', '.')) || 0;
+
+document.getElementById('usermeat').textContent = balance.toFixed(2);
+document.querySelector('#username').textContent = "@ViewBag.Username";
+
+
+
+function setExitEnabled(enabled) {
+    exitButton.disabled = !enabled;  
+    exitButton.classList.toggle("disabled", !enabled);  
+}
+
+
+
+
+const exitButton = document.getElementById("exit");
+exitButton.addEventListener("click", () => {
+    const idPlayer = parseInt("@ViewBag.PlayerId");
+
+    const sessionProfit = profit;
+
+    fetch("/Igre/PosodobiBalance", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ idPlayer, sessionProfit })
+    })
+    .then(response => {
+        if (response.ok) return response.json();
+        throw new Error("Failed to update balance.");
+    })
+    .catch(error => {
+        console.error("Error:", error);
+        alert("An error occurred.");
+    });
+
+    const idGame = 3;
+
+    const data = {
+        TotalWins: totalWin,
+        TotalLosses: totalLoss,
+        ID_player: idPlayer,
+        ID_game: idGame
+    };
+
+    fetch("/Igre/InsertGameState", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
+    })
+    .then(response => {
+        if (!response.ok) alert("Failed to insert GameState.");
+    })
+    .catch(error => {
+        console.error("Error:", error);
+        alert("An error occurred.");
+    });
+
+    window.location.href = "@Url.Action("Index", "Casino")";
+});
+
+
+const resultModal = document.getElementById("resultModal");
+const resultTitle = document.getElementById("resultTitle");
+const resultMessage = document.getElementById("resultMessage");
+const playAgainButton = document.getElementById("playAgainButton");
+const endGameButton = document.getElementById("endGameButton");
+
+function showResultModal(title, message){
+    resultTitle.textContent = title;
+    resultMessage.textContent = message;
+    resultModal.style.display = "flex"; 
+}
+
+function closeResultModal(){
+    resultModal.style.display = "none";
+}
+
+playAgainButton.addEventListener("click", () => {
+    closeResultModal();
+    resetGame();
+});
+
+endGameButton.addEventListener("click", () => {
+    exitButton.click();
+});
+
+
+resultModal.addEventListener("click", (e) => {
+    if (e.target === resultModal) {
+        closeResultModal();
+        resetGame();
+    }
+});
+
+
+
+const chicken = document.getElementById('chicken');
+const boulder = document.getElementById('boulder');
+const moveButton = document.getElementById('moveButton');
+const cashOutButton = document.getElementById('cashOutButton');
+let statusText = document.getElementById('status');
+
+const loseSound = document.getElementById("loseSound");
+const chickenSound = document.getElementById("chickenSound");
+const jackpotSound = document.getElementById("jackpotSound");
+const cashOutSound = document.getElementById("cashOutSound");
+
+let position = 0;
+let score = 0;
+let bet = 0;
+let multiplier = 1;
+let steps = 0;
+let isGameOver = false;
+let gameStarted = false;
+let win = false;
+let chanceOfDeath = 0.2;
+
+
+const MAX_STEPS = 10;
+const ROOT_FONT_SIZE = 16;
+const STEP_SIZE_REM = 70 / ROOT_FONT_SIZE;
+
+const landingGrid = document.getElementById("landingGrid");
+
+function initLandingTiles(){
+    if(!landingGrid) return;
+
+    landingGrid.innerHTML = "";
+    for(let i = 0; i <= MAX_STEPS; i++){
+        const t = document.createElement("div");
+        t.className = "landing-tile";
+        t.dataset.step = i;
+        t.style.left = (i * STEP_SIZE_REM) + "rem";
+        landingGrid.appendChild(t);
+    }
+
+    landingGrid.classList.add("on");
+    updateLandingTiles();
+}
+
+function updateLandingTiles(){
+    if(!landingGrid) return;
+
+    const tiles = landingGrid.querySelectorAll(".landing-tile");
+    tiles.forEach(t => t.classList.remove("active", "next"));
+
+    const cur = landingGrid.querySelector(`.landing-tile[data-step="${steps}"]`);
+    if(cur) cur.classList.add("active");
+
+    if(gameStarted && !isGameOver && steps < MAX_STEPS){
+        const nxt = landingGrid.querySelector(`.landing-tile[data-step="${steps + 1}"]`);
+        if(nxt) nxt.classList.add("next");
+    }
+}
+
+initLandingTiles();
+
+
+function startGame() {
+    bet = parseInt(document.getElementById("bet").value, 10);
+
+
+    if (isNaN(bet) || bet <= 0) {
+        showToast("Please enter a valid bet amount!", "error");
+        setExitEnabled(true); 
+        return;
+    }
+
+    if (bet > balance) {
+        showToast("Not enough 🥩 balance to place this bet.", "error");
+        setExitEnabled(true); 
+        return;
+    }
+
+  
+    setExitEnabled(false);
+
+    score = bet;
+    gameStarted = true;
+
+    toggleBet();
+
+    
+
+    updateLandingTiles();
+}
+
+
+function moveChicken() {
+    if (!gameStarted || isGameOver) {
+        showToast("Bet before trying to start the game!", "error");
+        return;
+    }
+
+    moveButton.disabled = true;
+
+    if (Math.random() < chanceOfDeath) { 
+        loseSound.play();
+        const offset = 2.6; 
+        fallAnimation(offset + position);
+        setTimeout(() => endGame(`Game Over!`, `You lost 🥩${bet}.`, bet * (-1)), 2000);
+        return;
+    }
+
+    steps += 1;
+    updateLandingTiles();
+
+    const rootFontSize = 16; 
+    const stepSizeRem = 70 / rootFontSize; 
+    position += stepSizeRem; 
+
+    chicken.style.transition = 'left 0.5s ease, transform 0.3s ease';
+    chicken.style.left = position + 'rem';
+    chicken.style.transform = 'translateY(-1rem)';
+    setTimeout(() => {
+        chicken.style.transform = 'translateY(0)';
+    }, 300);
+
+    multiplier = MULTIPLIERS[steps];
+    statusText.innerHTML =
+  `Chicken moved safely!<br>` +
+  `Reward: 🥩${(score * multiplier).toFixed(2)}.<br>` +
+  `Step ${steps} | Multiplier: ${multiplier.toFixed(2)}x`;
+
+
+
+
+    if (steps != 10) {
+        chickenSound.play();
+        setTimeout(() => { moveButton.disabled = false; }, 1000);
+    } else {
+        multiplier = 100.2;
+        const totalScore = parseFloat((score * multiplier).toFixed(2));
+        jackpotSound.play();
+        win = true;
+
+        document.body.style.backgroundColor = "#90EE90";
+        setTimeout(() => { document.body.style.backgroundColor = ""; }, 500);
+
+        setTimeout(() => endGame(`Jackpot!`, `You won 🥩${Math.abs(totalScore)}.`, totalScore), 1000);
+    }
+}
+
+function cashOut() {
+    if (isGameOver || !gameStarted) return;
+
+    cashOutSound.play();
+    const totalScore = score = parseFloat((score * multiplier).toFixed(2));
+
+    document.body.style.backgroundColor = "#90EE90";
+    setTimeout(() => { document.body.style.backgroundColor = ""; }, 500);
+
+    totalWin += totalScore;
+    profit += totalScore;
+    balance += totalScore;
+    document.getElementById('usermeat').textContent = balance.toFixed(2);
+
+    setTimeout(() => {
+        showResultModal(`Cash Out!`, `You earned 🥩${totalScore}.`);
+    }, 1500);
+
+    statusText.textContent = `You cashed out!`;
+    isGameOver = true;
+    gameStarted = false;
+
+    setExitEnabled(true);  
+}
+
+function endGame(title, message, totalScore) {
+    isGameOver = true;
+    gameStarted = false;
+
+    if (win) {
+        statusText.textContent = "Jackpot!";
+        totalWin += totalScore;
+        profit += totalScore;
+        balance += totalScore;
+    } else {
+        statusText.textContent = "Game Over!";
+        totalLoss += bet;
+        profit -= bet;
+        balance -= bet;
+        document.getElementById('usermeat').textContent = balance.toFixed(2);
+    }
+
+    document.getElementById('usermeat').textContent = balance.toFixed(2);
+
+    updateLandingTiles();
+
+    showResultModal(title, message);
+    setExitEnabled(true);  
+}
+
+function resetGame() {
+    position = 0;
+    score = 0;
+    multiplier = 1;
+    steps = 0;
+    isGameOver = false;
+    gameStarted = false;
+    chanceOfDeath = 0.2;
+    win = false;
+
+    chicken.style.transition = 'transform 0.3s ease-out';
+    chicken.style.transform = 'scale(1)';
+    chicken.style.left = position + '%';
+
+    boulder.style.display = "none";
+
+    moveButton.disabled = false;
+    cashOutButton.disabled = false; 
+
+    toggleBet();
+
+    statusText.textContent = "Place a bet and move the chicken to start.";
+    updateLandingTiles();
+}
+
+function fallAnimation(position) {
+    boulder.style.left = position + 'rem';
+    boulder.style.display = 'block';
+    boulder.style.animation = 'fall 1s forwards';
+
+    document.body.style.backgroundColor = "#880808";
+    setTimeout(() => { document.body.style.backgroundColor = ""; }, 500);
+
+    setTimeout(() => {
+        chicken.style.transition = 'transform 0.3s ease-out';
+        chicken.style.transform = 'scale(0.3)';
+    }, 550);
+}
+
+function toggleBet(){
+    const betButton = document.getElementById("start");
+    const betInput= document.getElementById("bet");
+
+    const isDisabled = !betButton.disabled;
+    betButton.disabled = isDisabled;
+    betInput.disabled = isDisabled;
+
+    betButton.classList.toggle("disabled", isDisabled);
+    betInput.classList.toggle("disabled", isDisabled);
+}
+
+
+const infoIcon = document.getElementById('info');
+const infoModal = document.getElementById('infoModal');
+const closeModal = document.getElementById('closeModal');
+
+infoIcon.addEventListener('click', () => { infoModal.style.display = 'block'; });
+closeModal.addEventListener('click', () => { infoModal.style.display = 'none'; });
+window.addEventListener('click', (event) => {
+    if (event.target === infoModal) infoModal.style.display = 'none';
+});
+</script>
+}
+
+<link rel="stylesheet" href="/igre/ChickenCross/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=VT323&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">

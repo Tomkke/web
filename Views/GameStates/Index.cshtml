@@ -1,0 +1,279 @@
+@model IEnumerable<web.Models.GameState>
+
+@{
+    ViewData["Title"] = "Game States";
+}
+<header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white box-shadow">
+            <div class="container-fluid">
+
+                <!-- <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">bla</a> -->
+                <div class="logo-container">
+                    <span class="logo-text" onclick="window.location.href='@Url.Action("Index", "Home")'">
+                    Steak
+                    </span>
+
+                    <img src="/images/steakLogo.png" alt="Steak Logo" class="steakLogo">
+                </div>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+
+                        <!-- TUKI DODAŠ GUMBE NA HEADER
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        -->
+
+                        @* Zakomentirano preverjanje za Administratorja *@
+                        
+                        @if (User.IsInRole("Administrator"))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Players" asp-action="Index" style="color: white;">Players</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Games" asp-action="Index" style="color: white;">GameTypes</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="GameStates" asp-action="Index" style="color: white;">GameStates</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Casino" asp-action="Index" style="color: white;">Games</a>
+                            </li>
+                        }
+
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Leaderboard" asp-action="Index" style="color: white;">Leaderboard</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Statistics" asp-action="Index" style="color: white;">Statistics</a>
+                        </li>
+                        
+
+            
+   
+
+                            
+                    </ul>
+                    <i id="settings" class="fas fa-cog"></i>
+                    <partial name="_LoginPartial" />
+                </div>
+            </div>
+        </nav>
+</header>
+
+
+
+
+
+
+
+<div class="gamestates-index">
+    <h1 style="color: #FFD700; text-align: center; text-shadow: 0 0 10px #FF4500;">Game States List</h1>
+
+    <p style="text-align: center; margin-bottom: 20px;">
+        <a asp-action="Create" class="btn btn-primary custom-create-btn">Add New Game State</a>
+    </p>
+
+    <table class="leaderboard-table">
+        <thead>
+            <tr>
+                <th>Total Wins</th>
+                <th>Total Losses</th>
+                <th>Total ProfitLoss</th>
+                <th>Email</th>
+                <th>Game name)</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model) {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.TotalWins)</td>
+                    <td>@Html.DisplayFor(modelItem => item.TotalLosses)</td>
+                    <td>@Html.DisplayFor(modelItem => item.TotalProfitLoss)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Player.Email)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Game.Game_name)</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.ID_stats" class="btn btn-warning btn-sm">Edit</a>
+                        <a asp-action="Details" asp-route-id="@item.ID_stats" class="btn btn-info btn-sm">Details</a>
+                        <a asp-action="Delete" asp-route-id="@item.ID_stats" class="btn btn-danger btn-sm">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<style>
+
+header nav {
+    background: linear-gradient(180deg, rgb(27, 24, 51) 0%, rgb(27, 24, 51) 50%, rgb(27, 24, 51)100%);
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.logo-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: #A84459;
+    margin-right: 10px;
+    margin-left: 10px;
+    font-family: 'Oswald', sans-serif;
+
+
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease-in-out;
+}
+
+.logo-text:hover {
+    color: #FFD700;
+    border-bottom: 2px solid #FFD700;
+    cursor: pointer;
+}
+
+.steakLogo {
+    width: 35px;
+    height: 35px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.steakLogo:hover {
+    transform: scale(1.1);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.gamestates-index {
+    background-color: #2C2C2C; 
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    margin: 20px auto;
+    max-width: 90%;
+}
+
+
+.leaderboard-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #2c3e50; 
+    color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.leaderboard-table th,
+.leaderboard-table td {
+    padding: 15px;
+    text-align: center;
+    font-size: 1rem;
+    border: 1px solid #444; 
+}
+
+.leaderboard-table th {
+    background-color: #34495e;
+    color: #FFD700; 
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.leaderboard-table tbody tr:nth-child(odd) {
+    background-color: #2c3e50;
+}
+
+.leaderboard-table tbody tr:nth-child(even) {
+    background-color: #1c1c1c;
+}
+
+.leaderboard-table tbody tr:hover {
+    background-color: #34495e;
+    color: #FFD700;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+.custom-create-btn {
+    background-color: #FF4500;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.custom-create-btn:hover {
+    background-color: #FF6347; 
+    color: black;
+}
+
+.btn-sm {
+    margin: 2px;
+    text-transform: uppercase;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.btn-warning {
+    background-color: #FFA500;
+    color: black;
+    border: none;
+}
+
+.btn-warning:hover {
+    background-color: #FFCC00;
+    color: white;
+}
+
+.btn-info {
+    background-color: #1E90FF;
+    color: white;
+    border: none;
+}
+
+.btn-info:hover {
+    background-color: #63B8FF;
+    color: black;
+}
+
+.btn-danger {
+    background-color: #FF4500;
+    color: white;
+    border: none;
+}
+
+.btn-danger:hover {
+    background-color: #FF6347;
+    color: black;
+}
+</style>
+
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&display=swap" rel="stylesheet">

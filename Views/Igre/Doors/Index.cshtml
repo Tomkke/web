@@ -1,0 +1,444 @@
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Doors";
+}
+
+<header>
+    <div class="userDiv">
+        <i id="user" class="fas fa-user"></i>
+        <p id="username"></p>
+        <p>🥩</p>
+        <p id="usermeat"></p>
+    </div>
+</header>
+
+<i id="info" class="fa-solid fa-circle-info"></i>
+<button id="exit">Exit</button>
+
+<div class="modal" id="infoModal">
+    <div class="modal-content">
+        <span class="close" id="closeModal">&times;</span>
+        <h2>Rules</h2>
+        <p>1. Place your bet (in <strong>Meat 🥩</strong>) to start the game.</p>
+        <p>2. Choose a door (Green, Orange, or Red) to reveal your fate.</p>
+        <p>3. Each door has a <strong>chance of death</strong> (Green: 20%, Orange: 30%, Red: 40%).</p>
+        <p>4. Behind the door, you may encounter <strong>+ , - , × , ÷</strong> to alter your score.</p>
+        <p>5. If you hit a bomb, you lose your bet and the game ends. 💣</p>
+        <p>6. Cash out anytime through the <strong>Emergency Exit</strong> to keep your winnings (bet × final score).</p>
+        <p>If you survive, you can continue and increase your score. Good luck! 🎰</p>
+    </div>
+</div>
+
+<div id="container">
+    <h1>BEHIND THE DOOR</h1>
+
+    <div class="bet-section">
+        <input type="number" min="1" step="1" id="bet" name="bet">
+        <button type="submit" value="start" id="betButton" onclick="startGame()">BET</button>
+    </div>
+
+    <div id="game-container">
+        <div class="door" id="door1" onclick="openDoor(1)">
+            <img src="/igre/Doors/media/closed-door.png" alt="Closed Door">
+            <div class="behind-door" id="number1"></div>
+        </div>
+        <div class="door" id="door2" onclick="openDoor(2)">
+            <img src="/igre/Doors/media/closed-door.png" alt="Closed Door">
+            <div class="behind-door" id="number2"></div>
+        </div>
+        <div class="door" id="door3" onclick="openDoor(3)">
+            <img src="/igre/Doors/media/closed-door.png" alt="Closed Door">
+            <div class="behind-door" id="number3"></div>
+        </div>
+        <div class="door" id="emergency" onclick="cashOut()">
+            <img src="/igre/Doors/media/emergency-door.png" alt="Emergency Door">
+        </div>
+    </div>
+
+    <div id="message">
+        <p>Welcome! Place your bet to start the game.</p>
+    </div>
+</div>
+
+
+<div id="resultModal" style="display:none;">
+    <div class="resultModal-content">
+        <h2 id="resultTitle"></h2>
+        <p id="resultMessage"></p>
+        <div class="result-actions">
+            <button id="playAgainButton">Play Again</button>
+            <button id="endGameButton">End Game</button>
+        </div>
+    </div>
+</div>
+
+<audio id="winSound" src="/igre/Doors/media/buff.mp3" preload="auto"></audio>
+<audio id="loseSound" src="/igre/Doors/media/damage.mp3" preload="auto"></audio>
+<audio id="bombSound" src="/igre/Doors/media/bomb.mp3" preload="auto"></audio>
+<audio id="jackpotSound" src="/igre/Doors/media/jackpot.mp3" preload="auto"></audio>
+
+
+<div id="toast" class="toast hidden">
+    <span id="toastMessage"></span>
+</div>
+
+
+@section Scripts {
+<script>
+
+function showToast(message, type = "success") {
+    const toast = document.getElementById("toast");
+    const toastMessage = document.getElementById("toastMessage");
+
+    toastMessage.textContent = message;
+    toast.className = `toast show ${type}`;
+
+    setTimeout(() => {
+        toast.classList.remove("show");
+        toast.classList.add("hidden");
+    }, 3000);
+}
+
+
+
+
+
+let score = 0;
+let bet = 0;
+let chanceOfDeath = 0;
+let isGameOver = false;
+let gameStarted = false;
+let isDoorLocked = false;
+
+
+let totalWin = 0;
+let totalLoss = 0;
+let profit = 0;
+
+
+let balance = parseFloat("@ViewBag.Balance".replace(',', '.')) || 0;
+document.getElementById('usermeat').textContent = balance.toFixed(2);
+document.querySelector('#username').textContent = "@ViewBag.Username";
+
+
+
+const resultModal = document.getElementById("resultModal");
+const resultTitle = document.getElementById("resultTitle");
+const resultMessage = document.getElementById("resultMessage");
+const playAgainButton = document.getElementById("playAgainButton");
+const endGameButton = document.getElementById("endGameButton");
+
+function setExitEnabled(enabled){
+  exitButton.disabled = !enabled;
+  exitButton.classList.toggle("disabled", !enabled);
+}
+
+function showResultModal(title, message){
+    resultTitle.textContent = title;
+    resultMessage.textContent = message;
+    resultModal.style.display = "flex";
+}
+function closeResultModal(){
+    resultModal.style.display = "none";
+}
+
+
+
+const exitButton = document.getElementById("exit");
+exitButton.addEventListener("click", () => {
+    const idPlayer = parseInt("@ViewBag.PlayerId");
+
+    const sessionProfit = profit;
+
+    fetch("/Igre/PosodobiBalance", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ idPlayer, sessionProfit })
+    })
+    .then(r => r.ok ? r.json() : Promise.reject())
+    .catch(() => alert("An error occurred."));
+
+    const idGame = 4;
+    const data = {
+        TotalWins: totalWin,
+        TotalLosses: totalLoss,
+        ID_player: idPlayer,
+        ID_game: idGame
+    };
+
+    fetch("/Igre/InsertGameState", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
+    })
+    .catch(() => alert("An error occurred."));
+
+    window.location.href = "@Url.Action("Index", "Casino")";
+});
+
+
+
+function setBetEnabled(enabled){
+    const betButton = document.getElementById("betButton");
+    const betInput = document.getElementById("bet");
+
+    betButton.disabled = !enabled;
+    betInput.disabled = !enabled;
+
+    betButton.classList.toggle("disabled", !enabled);
+    betInput.classList.toggle("disabled", !enabled);
+}
+
+
+
+function resetRound(){
+    
+    score = 0;
+    chanceOfDeath = 0;
+    isGameOver = false;
+    gameStarted = false;
+    isDoorLocked = false;
+
+    
+    document.querySelectorAll('.door').forEach(door => {
+        if (door.id !== "emergency") {
+            const img = door.querySelector('img');
+            img.src = "/igre/Doors/media/closed-door.png";
+            img.alt = "Closed Door";
+
+            const number = door.querySelector('.behind-door');
+            number.style.display = "none";
+            number.textContent = "";
+            number.style.color = "#333";
+        }
+    });
+
+    
+    document.getElementById('message').querySelector('p').textContent = "Welcome! Place your bet to start the game.";
+    setBetEnabled(true);
+
+    setExitEnabled(true);
+}
+
+
+
+function startGame() {
+    
+    resetRound();
+
+    bet = parseInt(document.getElementById("bet").value, 10);
+    if (isNaN(bet) || bet <= 0) {
+        showToast("Bet must be greater than 🥩0.", "error");
+        return;
+    }
+    if (bet > balance) {
+        showToast("Not enough 🥩 balance to place this bet.", "error");
+        return;
+    }
+
+    
+
+    score = bet;
+    isGameOver = false;
+    gameStarted = true;
+
+    document.getElementById('message').querySelector('p').textContent = `Current profit: 🥩${score}.`;
+    setBetEnabled(false);
+    setExitEnabled(false);
+
+}
+
+
+
+function openDoor(doorNumber) {
+    if (!gameStarted || isGameOver) {
+        showToast("Place a bet to start the game first.", "error");
+        return;
+    }
+    if (isDoorLocked) return;
+
+    const door = document.getElementById(`door${doorNumber}`);
+    const img = door.querySelector('img');
+    const number = document.getElementById(`number${doorNumber}`);
+    const survived = Math.random();
+
+    const winSound = document.getElementById("winSound");
+    const loseSound = document.getElementById("loseSound");
+    const bombSound = document.getElementById("bombSound");
+
+    isDoorLocked = true;
+
+    img.src = "/igre/Doors/media/open-door.png";
+    img.alt = "Open Door";
+
+    let randomNumber = 0.0;
+    let outcome;
+    let randomOperation;
+
+    switch (doorNumber) {
+        case 1:
+            chanceOfDeath = 0.2;
+            randomOperation = Math.random() < 0.7 ? "+" : "-";
+            break;
+        case 2:
+            chanceOfDeath = 0.3;
+            randomOperation = Math.random() < 0.4 ? "+" : (Math.random() < 0.7 ? "×" : (Math.random() < 0.55 ? "-" : "÷"));
+            break;
+        case 3:
+            chanceOfDeath = 0.4;
+            randomOperation = Math.random() < 0.7 ? "×" : "÷";
+            break;
+        default:
+            isDoorLocked = false;
+            showToast("Invalid door selected.", "error");
+            return;
+    }
+
+
+    if (survived < chanceOfDeath) {
+        number.textContent = "💣";
+        number.style.display = "block";
+
+        bombSound.play();
+        document.body.style.backgroundColor = "#880808";
+        setTimeout(() => { document.body.style.backgroundColor = ""; }, 500);
+
+        setTimeout(() => {
+            resetDoorVisual(doorNumber);
+            isDoorLocked = false;
+            endGame(); 
+        }, 1500);
+
+        return;
+    }
+
+
+    switch (randomOperation) {
+        case "+":
+            randomNumber = Math.floor(Math.random() * 25) + 1;
+            outcome = `+ ${randomNumber}`;
+            score += randomNumber;
+            number.style.color = 'green';
+            winSound.play();
+            break;
+        case "-":
+            randomNumber = Math.floor(Math.random() * 25) + 1;
+            outcome = `- ${randomNumber}`;
+            score -= randomNumber;
+            number.style.color = 'red';
+            loseSound.play();
+            break;
+        case "×":
+            randomNumber = Math.random() * 5 + 1;
+            randomNumber = Math.round(randomNumber * 100) / 100;
+            outcome = `× ${randomNumber}`;
+            score *= randomNumber;
+            number.style.color = 'green';
+            winSound.play();
+            break;
+        case "÷":
+            randomNumber = Math.random() * 5 + 1;
+            randomNumber = Math.round(randomNumber * 100) / 100;
+            outcome = `÷ ${randomNumber}`;
+            score /= randomNumber;
+            number.style.color = 'red';
+            loseSound.play();
+            break;
+    }
+
+    score = Math.round(score * 100) / 100;
+
+    number.textContent = outcome;
+    number.style.display = "block";
+    document.getElementById('message').querySelector('p').textContent = `Current profit: 🥩${score}.`;
+
+    setTimeout(() => {
+        resetDoorVisual(doorNumber);
+        isDoorLocked = false;
+    }, 1500);
+}
+
+function resetDoorVisual(doorNumber) {
+    const door = document.getElementById(`door${doorNumber}`);
+    const img = door.querySelector('img');
+    const number = document.getElementById(`number${doorNumber}`);
+
+    img.src = "/igre/Doors/media/closed-door.png";
+    img.alt = "Closed Door";
+    number.style.display = "none";
+}
+
+
+
+function endGame() {
+    isGameOver = true;
+    gameStarted = false;
+
+    totalLoss += bet;
+    profit -= bet;
+
+    balance -= bet;
+    document.getElementById('usermeat').textContent = balance.toFixed(2);
+
+    document.getElementById('message').querySelector('p').textContent = "You hit a bomb! Game over.";
+    document.getElementById('usermeat').textContent = balance.toFixed(2);
+
+    setExitEnabled(true);
+    showResultModal("You Lose", `You lost 🥩${bet.toFixed(2)}.`);
+}
+
+function cashOut() {
+    if (!gameStarted || isGameOver) return;
+
+    const jackpotSound = document.getElementById("jackpotSound");
+
+    document.body.style.backgroundColor = "#90EE90";
+    jackpotSound.play();
+    setTimeout(() => { document.body.style.backgroundColor = ""; }, 500);
+
+    totalWin += score;
+    profit += score;
+    balance += score;
+
+    document.getElementById('usermeat').textContent = balance.toFixed(2);
+
+    isGameOver = true;
+    gameStarted = false;
+
+    setExitEnabled(true);
+
+
+    setTimeout(() => {
+        showResultModal("You Cashed Out", `You earned 🥩${score.toFixed(2)}.`);
+    }, 1200);
+}
+
+
+
+playAgainButton.addEventListener("click", () => {
+    closeResultModal();
+    resetRound();
+});
+
+endGameButton.addEventListener("click", () => {
+    exitButton.click();
+});
+
+
+
+const infoIcon = document.getElementById('info');
+const infoModal = document.getElementById('infoModal');
+const closeModal = document.getElementById('closeModal');
+
+infoIcon.addEventListener('click', () => { infoModal.style.display = 'block'; });
+closeModal.addEventListener('click', () => { infoModal.style.display = 'none'; });
+window.addEventListener('click', (event) => {
+    if (event.target === infoModal) infoModal.style.display = 'none';
+});
+</script>
+}
+
+<link rel="stylesheet" href="/igre/Doors/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=VT323&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">

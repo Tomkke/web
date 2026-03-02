@@ -1,0 +1,40 @@
+@using Microsoft.AspNetCore.Identity
+@using web.Models
+@using web.Data
+
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+@inject SteakContext _context
+
+<ul class="navbar-nav">
+    @if (SignInManager.IsSignedIn(User))
+    {
+
+        var identityName = UserManager.GetUserName(User);
+
+        
+        var playerName = _context.Players
+            .Where(p => p.Email == identityName)
+            .Select(p => p.Username)
+            .FirstOrDefault();
+
+        <li class="nav-item">
+            <span style="font-family: Georgia, 'Times New Roman', Times, serif;"
+                id="manage"
+                class="nav-link text-white"
+                title="Profile">
+                Hello @(playerName ?? identityName)!
+            </span>
+        </li>
+
+        <li class="nav-item">
+            <form id="logoutForm"
+                  class="form-inline"
+                  asp-area="Identity"
+                  asp-page="/Account/Logout"
+                  asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                <button id="logout" type="submit" class="nav-link btn btn-link text-white border-0">Logout</button>
+            </form>
+        </li>
+    }
+</ul>

@@ -1,0 +1,277 @@
+
+header nav[b-eai8a5d1aw] {
+    background: linear-gradient(180deg, rgb(27, 24, 51) 0%, rgb(27, 24, 51) 50%, rgb(27, 24, 51)100%);
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.logo-container[b-eai8a5d1aw] {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.logo-text[b-eai8a5d1aw] {
+    font-size: 24px;
+    font-weight: bold;
+    color: #A84459;
+    margin-right: 10px;
+    margin-left: 10px;
+    font-family: 'Oswald', sans-serif;
+
+
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease-in-out;
+}
+
+.logo-text:hover[b-eai8a5d1aw] {
+    color: #FFD700;
+    border-bottom: 2px solid #FFD700;
+    cursor: pointer;
+}
+
+.steakLogo[b-eai8a5d1aw] {
+    width: 35px;
+    height: 35px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.steakLogo:hover[b-eai8a5d1aw] {
+    transform: scale(1.1);
+}
+
+
+
+
+
+
+
+
+
+
+
+.hero[b-eai8a5d1aw] {
+    background: 
+        linear-gradient(90deg, rgba(2, 0, 36, 0.8) 0%, rgba(110, 11, 175, 0.8) 53%, rgba(0, 212, 255, 0.8) 100%), 
+        url('/images/hero.png'), 
+        url('/images/stars.gif'); 
+    
+    background-blend-mode: overlay, normal; 
+    width: 100%; 
+    height: 60vh; 
+    
+    display: flex;
+    align-items: center; 
+    justify-content: flex-start; 
+    padding: 50px 80px; 
+    color: white; 
+    
+    background-size: cover, contain, cover; 
+    background-repeat: no-repeat; 
+    background-position: center center, 90% 50%, center; 
+}
+
+.hero-content[b-eai8a5d1aw] {
+    max-width: 600px; 
+    background: rgba(0, 0, 0, 0.5); 
+    backdrop-filter: blur(10px); 
+    padding: 20px; 
+    border-radius: 10px; 
+    color: white; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); 
+    margin-left: 100px; 
+}
+
+.hero h1[b-eai8a5d1aw] {
+    font-size: 4rem; 
+    margin-bottom: 15px;
+}
+
+.hero p[b-eai8a5d1aw] {
+    font-size: 1.5rem; 
+    margin-bottom: 25px;
+}
+
+
+
+@keyframes color-change-b-eai8a5d1aw {
+    0% { color: #FFD700; }
+    25% { color: #FF4500; }
+    50% { color: #FF6347; }
+    75% { color: #FFA07A; }
+    100% { color: #FFD700; }
+}
+
+
+@keyframes size-pulse-b-eai8a5d1aw {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+.glavni-naslov[b-eai8a5d1aw] {
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    color: #FFD700;
+    text-shadow: 0 0 10px #FF4500, 0 0 20px #FF6347, 0 0 30px #FFA07A;
+    animation: color-change-b-eai8a5d1aw 3s infinite, size-pulse-b-eai8a5d1aw 2s infinite;
+}
+
+
+
+
+@media (max-width: 1275px) {
+    .hero[b-eai8a5d1aw] {
+        flex-direction: column; 
+        align-items: center; 
+        justify-content: center; 
+        padding: 20px; 
+        height: auto; 
+        background-size: cover, cover, cover; 
+    }
+
+    .hero-content[b-eai8a5d1aw] {
+        max-width: 40%; 
+        margin: 20px auto; 
+        text-align: center; 
+    }
+
+    .hero h1[b-eai8a5d1aw] {
+        font-size: 2.5rem; 
+        margin-bottom: 10px; 
+    }
+
+    .hero p[b-eai8a5d1aw] {
+        font-size: 1.2rem; 
+        margin-bottom: 20px; 
+    }
+
+    .hero-buttons[b-eai8a5d1aw] {
+        flex-direction: column; 
+        gap: 15px; 
+        align-items: center; 
+    }
+
+    .hero-buttons .btn[b-eai8a5d1aw] {
+        width: 70%; 
+        max-width: 300px; 
+    }
+}
+
+/* ---------------------------------------------------------------------------- */
+
+
+.highlight-text[b-eai8a5d1aw] {
+    font-size: 10rem; 
+    font-weight: bold; 
+    text-align: center; 
+    color: #FFD700; 
+    margin: 20px 0; 
+    text-shadow: 0 0 50px #FF4500, 0 0 10px #FF6347; 
+}
+
+
+
+.ced-ad-container[b-eai8a5d1aw] {
+    background-color: #1B1833;
+    
+    border-radius: 10px; 
+    padding: 20px; 
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    margin-bottom: 20px; 
+}
+
+.ced-ad-container img[b-eai8a5d1aw] {
+    width: 100%; 
+    height: 300px; 
+    object-fit: cover; 
+    border-radius: 10px; 
+    margin-bottom: 15px; 
+}
+
+
+.content-container[b-eai8a5d1aw] {
+    background: #25223b; 
+    border-radius: 15px; 
+    padding: 30px; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    color: #F5F5F5; 
+}
+
+.content-container h1[b-eai8a5d1aw] {
+    text-align: center;
+    font-size: 2.5rem; 
+    color: #FFD700; 
+    letter-spacing: 3px;
+    text-shadow: 0 0 15px #FF8C00, 0 0 30px #FFA500; 
+    font-family: 'Georgia', serif;
+
+}
+
+.content-container p[b-eai8a5d1aw] {
+    font-size: 1.2rem; 
+    line-height: 1.8; 
+    margin-bottom: 15px;
+    color: #EAEAEA; 
+}
+
+
+
+.casino-games-list[b-eai8a5d1aw] {
+    list-style: none; 
+    padding: 0;
+    margin: 20px 0; 
+}
+
+.casino-games-list li[b-eai8a5d1aw] {
+    background: linear-gradient(90deg, #2c3e50, #34495e); 
+    color: #FFD700; 
+    padding: 10px 15px; 
+    margin-bottom: 10px; 
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); 
+    transition: transform 0.2s, box-shadow 0.2s; 
+    font-family: 'Arial', sans-serif; 
+    display: flex; 
+    align-items: center; 
+    gap: 10px; 
+}
+
+.casino-games-list li:hover[b-eai8a5d1aw] {
+    transform: scale(1.05); 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.casino-games-list li[b-eai8a5d1aw]::before {
+    content: "🎲"; 
+    font-size: 1.5rem; 
+    color: #FFA500; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

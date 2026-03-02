@@ -1,0 +1,211 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white box-shadow">
+            <div class="container-fluid">
+
+                <!-- <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">bla</a> -->
+                <div class="logo-container">
+                    <span class="logo-text">
+                    Steak
+                    </span>
+
+                    <img src="/images/steakLogo.png" alt="Steak Logo" class="steakLogo">
+                </div>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+
+                        <!-- TUKI DODAŠ GUMBE NA HEADER
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        -->
+
+                        @* Zakomentirano preverjanje za Administratorja *@
+                        
+                        @if (User.IsInRole("Administrator"))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Players" asp-action="Index" style="color: white;">Players</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Games" asp-action="Index" style="color: white;">GameTypes</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="GameStates" asp-action="Index" style="color: white;">GameStates</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Casino" asp-action="Index" style="color: white;">Games</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Leaderboard" asp-action="Index" style="color: white;">Leaderboard</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Statistics" asp-action="Index" style="color: white;">Statistics</a>
+                            </li>
+                        }
+
+                        
+                        
+
+            
+   
+
+                            
+                    </ul>
+                    <i id="settings" class="fas fa-cog"></i>
+                    <partial name="_LoginPartial" />
+                </div>
+            </div>
+        </nav>
+</header>
+
+
+
+<div class="hero">
+    <div class="hero-content">
+        <h1 class="glavni-naslov">Bet Big, Win Juicy</h1>
+        <p>Get 🥩1000 for Free, by making an account</p>
+        <div class="hero-buttons" style="display: flex; justify-content: center; gap: 50px;"> 
+            <a asp-area="Identity" asp-page="/Account/Login" 
+            class="btn btn-primary" 
+            style="width: 200px;padding: 16px 24px;font-size: 18px;font-weight: 700;letter-spacing: 0.8px;color: #1a1a1a;background: linear-gradient(135deg, #FFD700, #FFB800);border: none;border-radius: 14px;cursor: pointer;box-shadow:0 8px 18px rgba(255, 184, 0, 0.35),inset 0 1px 0 rgba(255,255,255,0.4);transition: transform 0.2s ease,box-shadow 0.2s ease,filter 0.2s ease;">
+                Play now
+            </a>
+            
+        </div>
+        <style>
+        
+       .hero-buttons .btn-primary:hover, .hero-buttons .btn-secondary:hover {
+    background-color: #7C2538; 
+    color: white; 
+    border-color: #A84459; 
+    transform: scale(1.25); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+        </style>
+
+    </div>
+</div>
+
+
+
+
+
+<div class="container-fluid mt-5">
+    <div class="row gx-4"> 
+
+        <!-- Levi stolpec (3/12) -->
+        <div class="col-3 ced-ad-container">
+            <div class="game-thumb">
+                <img src="/images/Slot.png" alt="Classic Slots" />
+                <div class="game-thumb__label">Classic Slots</div>
+            </div>
+
+            <div class="game-thumb">
+                <img src="/images/ChickenCross.png" alt="Chicken Cross" />
+                <div class="game-thumb__label">Chicken Cross</div>
+            </div>
+
+            <div class="game-thumb">
+                <img src="/images/Plinko.png" alt="Plinko" />
+                <div class="game-thumb__label">Plinko</div>
+            </div>
+        </div>
+
+        
+
+        <!-- Sredinski stolpec (6/12) -->
+        <div class="col-6 content-container">
+            <h1>Casino Steak</h1>
+
+            <p style="font-size: 1.5rem;" class="highlight-text">Feeling low on cash or not ready to gamble with real money?</p>
+            <br>
+            <p>
+                No problem! At Casino Steak, we bring the thrill of 
+                a real casino to your fingertips, completely risk-free. By signing up for a free account, you'll instantly 
+                receive <strong>🥩1000</strong>—our virtual currency—to play and explore without any worries. 
+                Experience the excitement of high-stakes games without the fear of losing real money. 
+            </p>
+
+            <p>
+                Whether you're here 
+                to sharpen your skills, test your strategies, or just unwind, our platform is designed to offer a premium 
+                gaming experience for all. Dive in and discover a world of entertainment, where every spin, card, and roll 
+                brings you closer to the jackpot!
+            </p>
+
+            
+            <br>
+        
+            <p>
+                We offer a variety of exciting games that cater to all kinds of players, including:
+                <ul class="casino-games-list">
+                <li><strong>Classic Slots:</strong> Experience the timeless charm of slot machines.</li>
+                <li><strong>Higher or Lower:</strong> Test your intuition in this thrilling card game.</li>
+                <li><strong>Chicken Cross:</strong> A fun and unique game full of surprises.</li>
+                <li><strong>Doors:</strong> Take your chances and pick the right door to win big.</li>
+                <li><strong>Plinko:</strong> Drop the puck and watch it bounce its way to victory.</li>
+                <li><strong>Mines:</strong> Strategize and uncover hidden treasures while avoiding the mines.</li>
+            </ul>
+            </p>
+
+            <br>
+
+            <p class="highlight-text">Disclaimer</p>
+            <p style="text-align: center;">
+                This project is a student work created for a bachelor’s thesis.
+                All visual assets belong to their respective owners and are used
+                for non-commercial, educational purposes only.
+            </p>
+            
+        
+        </div>
+
+
+
+
+        <!-- Desni stolpec (3/12) -->
+        <div class="col-3 ced-ad-container">
+            <div class="game-thumb">
+                <img src="/images/HigherLower.png" alt="Higher or Lower" />
+                <div class="game-thumb__label">Higher or Lower</div>
+            </div>
+
+            <div class="game-thumb">
+                <img src="/images/Doors.png" alt="Doors" />
+                <div class="game-thumb__label">Doors</div>
+            </div>
+
+            <div class="game-thumb">
+                <img src="/images/Mines.png" alt="Mines" />
+                <div class="game-thumb__label">Mines</div>
+            </div>
+        </div>
+
+
+
+    </div>
+</div>
+
+
+
+
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&display=swap" rel="stylesheet">
+
+
+
+
+
+
+

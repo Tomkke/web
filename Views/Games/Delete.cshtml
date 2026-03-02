@@ -1,0 +1,91 @@
+@model web.Models.Game
+
+@{
+    ViewData["Title"] = "Delete Game";
+}
+
+<div class="games-delete">
+    <h1 style="color: #FF4500; text-align: center; text-shadow: 0 0 10px #FFD700;">Confirm Deletion</h1>
+
+    <p style="text-align: center; margin: 20px 0;">
+        Are you sure you want to delete the following game?
+    </p>
+
+    <div class="details-content">
+        <dl class="row">
+            <dt class="col-sm-4">Game Name</dt>
+            <dd class="col-sm-8">@Model.Game_name</dd>
+
+            <dt class="col-sm-4">Game Description</dt>
+            <dd class="col-sm-8">@Model.Game_description</dd>
+        </dl>
+    </div>
+
+    <form asp-action="Delete" method="post">
+        <input type="hidden" asp-for="ID_game" />
+        <div class="form-buttons">
+            <button type="submit" class="btn btn-danger custom-delete-btn">Delete</button>
+            <a asp-action="Index" class="btn btn-secondary custom-cancel-btn">Cancel</a>
+        </div>
+    </form>
+</div>
+
+<style>
+
+.games-delete {
+    background-color: #2C2C2C; 
+    color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    margin: 20px auto;
+    max-width: 600px; 
+    text-align: left;
+}
+
+
+.details-content dt {
+    color: #FFD700; 
+    font-weight: bold;
+}
+
+.details-content dd {
+    color: white; 
+    margin-bottom: 10px;
+}
+
+
+.custom-delete-btn {
+    background-color: #FF0000; 
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.custom-delete-btn:hover {
+    background-color: #FF6347; 
+    color: black;
+}
+
+.custom-cancel-btn {
+    background-color: #3C3C3C; 
+    color: white;
+    border: 1px solid #FFD700;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.custom-cancel-btn:hover {
+    background-color: #444; 
+    color: #FFD700; 
+    border-color: #FF4500; 
+}
+</style>
