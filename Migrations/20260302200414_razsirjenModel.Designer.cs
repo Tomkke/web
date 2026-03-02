@@ -12,7 +12,7 @@ using web.Data;
 namespace web.Migrations
 {
     [DbContext(typeof(SteakContext))]
-    [Migration("20260228133912_razsirjenModel")]
+    [Migration("20260302200414_razsirjenModel")]
     partial class razsirjenModel
     {
         /// <inheritdoc />

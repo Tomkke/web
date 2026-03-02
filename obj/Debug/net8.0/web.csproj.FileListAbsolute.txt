@@ -1038,3 +1038,4 @@ C:\Users\Tomas\Documents\Casino - Steak\web\obj\Debug\net8.0\refint\web.dll
 C:\Users\Tomas\Documents\Casino - Steak\web\obj\Debug\net8.0\web.pdb
 C:\Users\Tomas\Documents\Casino - Steak\web\obj\Debug\net8.0\web.genruntimeconfig.cache
 C:\Users\Tomas\Documents\Casino - Steak\web\obj\Debug\net8.0\ref\web.dll
+C:\Users\Tomas\Desktop\Casino - Steak\web\obj\Debug\net8.0\web.sourcelink.json
